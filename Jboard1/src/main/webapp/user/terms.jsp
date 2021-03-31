@@ -1,3 +1,4 @@
+<%@page import="kr.co.jboadr1.config.DBConfig"%>
 <%@page import="kr.co.jboadr1.bean.TermsBean" %>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
@@ -5,12 +6,7 @@
 <%@page import="java.sql.DriverManager"%>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <%
-String host = "jdbc:mysql://192.168.10.114:3306/ljj";
-String user = "ljj";
-String pass = "1234";
-
-Class.forName("com.mysql.jdbc.Driver");
-Connection conn = DriverManager.getConnection(host, user, pass);
+Connection conn=DBConfig.getInstance().getConnection();
 Statement stmt = conn.createStatement();
 String sql = "SELECT * FROM `JBOARD_TERMS`;";
 ResultSet rs = stmt.executeQuery(sql);

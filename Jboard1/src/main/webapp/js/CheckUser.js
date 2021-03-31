@@ -9,8 +9,7 @@
    $(function(){
    	//아이디 중복 체크 && 아이디 영문자 확인
    	var regUid = /^[a-z]+[a-z0-9]{3,10}$/;
-   	
-   	$('input[name=uid]').inputuid.focusout(function(){
+   	$('input[name=uid]').focusout(function(){
    		var uid = $(this).val();
    		var jsonData = {'uid':uid};
    		
